@@ -41,20 +41,19 @@ export function Dashboard({ profile, onReset }: Props) {
       </header>
 
       {isFutureQuitDate && (
-        <p className="mt-4 rounded-xl bg-emerald-50 px-4 py-3 text-center text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-          Sua jornada começa em breve — você decidiu parar. Isso já é o primeiro passo. 💚
-        </p>
+        <div className="mt-4 rounded-xl bg-emerald-50 px-4 py-3 text-center dark:bg-emerald-900/30">
+          <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+            Sua jornada começa em breve — você decidiu parar. Isso já é o primeiro passo. 💚
+          </p>
+          <p className="mt-1 text-xs text-emerald-700/80 dark:text-emerald-300/80">
+            O contador vai começar a andar sozinho quando a data chegar. Até lá, aproveite para se preparar.
+          </p>
+        </div>
       )}
 
       <div className="mt-6">
         <TimeCounter quitDateISO={profile.quitDateISO} />
       </div>
-
-      {isFutureQuitDate && (
-        <p className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
-          O contador vai começar a andar sozinho quando a data chegar. Até lá, aproveite para se preparar.
-        </p>
-      )}
 
       <p className="mt-6 text-center text-base italic text-slate-500 dark:text-slate-400">
         "{quote}"

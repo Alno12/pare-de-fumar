@@ -41,7 +41,7 @@ export function Milestones({ quitDateISO }: Props) {
                   className={`text-sm ${
                     reached
                       ? 'text-slate-600 dark:text-slate-300'
-                      : 'text-slate-500 dark:text-slate-400'
+                      : 'text-slate-400 dark:text-slate-500'
                   }`}
                 >
                   {milestone.description}

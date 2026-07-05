@@ -131,10 +131,10 @@ export function CravingHelper() {
                 aria-live="polite"
                 className={`mx-auto mt-6 flex h-32 w-32 items-center justify-center rounded-full text-white font-semibold transition-all duration-[4000ms] motion-reduce:scale-100 motion-reduce:transition-none motion-reduce:duration-0 ${
                   breathPhase === 'inspire'
-                    ? 'scale-125 bg-emerald-500'
+                    ? 'scale-125 bg-emerald-700'
                     : breathPhase === 'segure'
-                      ? 'scale-125 bg-amber-500'
-                      : 'scale-90 bg-sky-500'
+                      ? 'scale-125 bg-amber-700'
+                      : 'scale-90 bg-sky-700'
                 }`}
               >
                 {breathPhase === 'inspire' ? 'Inspire' : breathPhase === 'segure' ? 'Segure' : 'Expire'}
