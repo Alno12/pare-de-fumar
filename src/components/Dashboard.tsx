@@ -17,6 +17,14 @@ export function Dashboard({ profile, onReset }: Props) {
     [],
   )
 
+  // Quando a data de parada ainda não chegou, o usuário está se preparando
+  // para parar — o contador zerado não deve parecer "sem progresso", e sim
+  // um convite a celebrar a decisão já tomada.
+  const isFutureQuitDate = useMemo(
+    () => new Date(profile.quitDateISO).getTime() > Date.now(),
+    [profile.quitDateISO],
+  )
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 pb-28">
       <header className="flex items-center justify-between">
@@ -32,9 +40,21 @@ export function Dashboard({ profile, onReset }: Props) {
         </button>
       </header>
 
+      {isFutureQuitDate && (
+        <p className="mt-4 rounded-xl bg-emerald-50 px-4 py-3 text-center text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+          Sua jornada começa em breve — você decidiu parar. Isso já é o primeiro passo. 💚
+        </p>
+      )}
+
       <div className="mt-6">
         <TimeCounter quitDateISO={profile.quitDateISO} />
       </div>
+
+      {isFutureQuitDate && (
+        <p className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
+          O contador vai começar a andar sozinho quando a data chegar. Até lá, aproveite para se preparar.
+        </p>
+      )}
 
       <p className="mt-6 text-center text-lg italic text-slate-600 dark:text-slate-300">
         "{quote}"
