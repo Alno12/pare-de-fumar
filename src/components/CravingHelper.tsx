@@ -27,6 +27,10 @@ export function CravingHelper() {
       { phase: 'segure', duration: 4000 },
       { phase: 'expire', duration: 6000 },
     ]
+    // O botão clicado é desmontado ao entrar na fase de respiração; move o foco
+    // para o botão "Já passou, fechar" (estável dentro do diálogo) para que o
+    // foco não escape para o body. Critério WCAG 2.4.3 (Focus Order).
+    closeButtonRef.current?.focus()
     let i = 0
     function next() {
       if (i >= sequence.length) {
