@@ -34,7 +34,7 @@ export function Dashboard({ profile, onReset }: Props) {
         <button
           type="button"
           onClick={onReset}
-          className="text-sm text-slate-500 underline hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+          className="-my-2 flex min-h-11 items-center rounded-lg px-2 text-sm text-slate-500 underline transition hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
         >
           Editar dados
         </button>
@@ -56,7 +56,7 @@ export function Dashboard({ profile, onReset }: Props) {
         </p>
       )}
 
-      <p className="mt-6 text-center text-lg italic text-slate-600 dark:text-slate-300">
+      <p className="mt-6 text-center text-base italic text-slate-500 dark:text-slate-400">
         "{quote}"
       </p>
 

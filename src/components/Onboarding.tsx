@@ -36,7 +36,7 @@ export function Onboarding({ onSubmit }: Props) {
             value={quitDateISO}
             onChange={(e) => setQuitDateISO(e.target.value)}
             required
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Pode ser no passado ou uma data futura em que você decidiu parar. Não existe resposta errada.
@@ -54,7 +54,7 @@ export function Onboarding({ onSubmit }: Props) {
             onChange={(e) => setCigarettesPerDay(Number(e.target.value))}
             required
             placeholder="Ex: 10"
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Um valor aproximado já ajuda. Você pode ajustar depois.
@@ -72,7 +72,7 @@ export function Onboarding({ onSubmit }: Props) {
             onChange={(e) => setCigarettesPerPack(Number(e.target.value))}
             required
             placeholder="Ex: 20"
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
         </div>
 
@@ -88,7 +88,7 @@ export function Onboarding({ onSubmit }: Props) {
             onChange={(e) => setPricePerPack(Number(e.target.value))}
             required
             placeholder="Ex: 12,00"
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Usamos isso só para mostrar quanto você está economizando.
@@ -103,7 +103,7 @@ export function Onboarding({ onSubmit }: Props) {
             value={motivo}
             onChange={(e) => setMotivo(e.target.value)}
             placeholder="Ex: quero mais saúde para minha família"
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
             rows={3}
           />
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -113,7 +113,7 @@ export function Onboarding({ onSubmit }: Props) {
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-emerald-600 py-3 font-semibold text-white transition hover:bg-emerald-700"
+          className="w-full rounded-lg bg-emerald-600 py-3 font-semibold text-white transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-500 dark:focus-visible:ring-offset-slate-900"
         >
           Começar minha jornada
         </button>

@@ -27,7 +27,7 @@ export function TimeCounter({ quitDateISO }: Props) {
       aria-label={label}
       className="rounded-2xl bg-emerald-600 px-6 py-8 text-white shadow-lg"
     >
-      <p aria-hidden="true" className="text-center text-sm uppercase tracking-wide text-emerald-100">
+      <p aria-hidden="true" className="text-center text-sm uppercase tracking-wide text-white/90">
         Você está sem fumar há
       </p>
       <div aria-hidden="true" className="mt-3 flex justify-center gap-3 sm:gap-6">
@@ -44,7 +44,7 @@ function TimeBlock({ value, label }: { value: number | string; label: string }) 
   return (
     <div className="text-center">
       <div className="text-3xl font-bold tabular-nums sm:text-5xl">{value}</div>
-      <div className="text-xs uppercase text-emerald-100">{label}</div>
+      <div className="text-xs uppercase text-white/90">{label}</div>
     </div>
   )
 }

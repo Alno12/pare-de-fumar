@@ -22,7 +22,7 @@ export function Milestones({ quitDateISO }: Props) {
                 className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                   reached
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-200 text-slate-500 dark:bg-slate-700 dark:text-slate-400'
+                    : 'bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400'
                 }`}
               >
                 {reached ? '✓' : ''}
@@ -32,7 +32,7 @@ export function Milestones({ quitDateISO }: Props) {
                   className={`font-medium ${
                     reached
                       ? 'text-slate-900 dark:text-slate-50'
-                      : 'text-slate-400 dark:text-slate-500'
+                      : 'text-slate-500 dark:text-slate-400'
                   }`}
                 >
                   {milestone.title}
@@ -41,7 +41,7 @@ export function Milestones({ quitDateISO }: Props) {
                   className={`text-sm ${
                     reached
                       ? 'text-slate-600 dark:text-slate-300'
-                      : 'text-slate-400 dark:text-slate-500'
+                      : 'text-slate-500 dark:text-slate-400'
                   }`}
                 >
                   {milestone.description}
