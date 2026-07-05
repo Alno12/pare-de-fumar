@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  /* Cor primária: saúde, progresso, ações positivas/confirmação.
+     Mesma escala emerald do Tailwind — não redefinimos os valores em si,
+     apenas nomeamos o papel semântico para uso em docs/outros agentes. */
+  --color-brand: var(--color-emerald-600);
+  --color-brand-hover: var(--color-emerald-700);
+  --color-brand-foreground: var(--color-emerald-50);
+
+  /* Cor de urgência: SOS, fissura, ações que pedem atenção imediata. */
+  --color-urgent: var(--color-rose-600);
+  --color-urgent-hover: var(--color-rose-700);
+
+  /* Duração padrão de transições/hover (botões, links, estados de UI). */
+  --duration-quick: 200ms;
+  /* Duração padrão de animações mais expressivas (ex.: pulso de respiração). */
+  --duration-slow: 4000ms;
+}
+
 html {
   color-scheme: light dark;
 }
@@ -8,3 +26,81 @@ body {
   margin: 0;
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
 }
+
+/*
+ * Motion: entrada de modais (fade + leve subida).
+ * Curta e discreta (~200ms, alinhada a --duration-quick).
+ * Anima apenas opacity/transform. Some por completo com prefers-reduced-motion.
+ */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-modal-in {
+  animation: modal-in var(--duration-quick) ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-modal-in {
+    animation: none;
+  }
+}
+
+/*
+ * Motion: pulso único ao alcançar um marco de saúde.
+ * animation-iteration-count é implicitamente 1 (não há repeat/infinite).
+ * Some por completo com prefers-reduced-motion.
+ */
+@keyframes milestone-pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-milestone-pulse {
+  animation: milestone-pulse 500ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-milestone-pulse {
+    animation: none;
+  }
+}
+
+/*
+ * Semântica de design tokens do app "Parar de Fumar"
+ * ----------------------------------------------------
+ * Cores (papel semântico -> escala Tailwind):
+ *   - emerald  = saúde, progresso, positivo (marca/brand). Ex.: emerald-600 (ação),
+ *                emerald-400 (texto de destaque no escuro).
+ *   - rose     = urgência, SOS, fissura/craving. Ex.: rose-600 (botão SOS).
+ *   - slate    = neutros: superfícies, bordas, texto. Claro: white / slate-200 / slate-500/600/700.
+ *                Escuro: slate-800/700 (superfícies), slate-300/400 (texto secundário),
+ *                slate-50 (texto primário).
+ *   - amber    = fase "inspire" do exercício de respiração.
+ *   - sky      = fase "expire" do exercício de respiração.
+ *
+ * Modo claro/escuro:
+ *   Usamos as variantes `dark:` do Tailwind (baseadas em classe/media query),
+ *   não um sistema de tokens paralelo. Todo componente com cor de superfície
+ *   ou texto deve declarar o par claro + dark: explicitamente.
+ *
+ * Raios de borda (uso consistente):
+ *   - rounded-2xl = elementos de destaque (cartão de contador principal, modais).
+ *   - rounded-xl  = cartões de conteúdo (stats, milestones).
+ *   - rounded-lg  = controles de formulário e botões de ação padrão.
+ *   - rounded-full = elementos circulares/pill (botão SOS, indicadores, avatares de status).
+ */

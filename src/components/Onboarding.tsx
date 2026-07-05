@@ -23,26 +23,29 @@ export function Onboarding({ onSubmit }: Props) {
         Parar de Fumar
       </h1>
       <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-        Vamos acompanhar sua jornada juntos. Conte pra gente um pouco do seu hábito.
+        Vamos acompanhar essa jornada com você. Leva menos de um minuto para começar.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-5">
         <div>
           <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Data e hora em que você parou (ou vai parar)
+            Quando você parou (ou vai parar) de fumar?
           </label>
           <input
             type="datetime-local"
             value={quitDateISO}
             onChange={(e) => setQuitDateISO(e.target.value)}
             required
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Pode ser no passado ou uma data futura em que você decidiu parar. Não existe resposta errada.
+          </p>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Quantos cigarros você fumava por dia?
+            Em média, quantos cigarros você fumava por dia?
           </label>
           <input
             type="number"
@@ -50,13 +53,17 @@ export function Onboarding({ onSubmit }: Props) {
             value={cigarettesPerDay}
             onChange={(e) => setCigarettesPerDay(Number(e.target.value))}
             required
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            placeholder="Ex: 10"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Um valor aproximado já ajuda. Você pode ajustar depois.
+          </p>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Cigarros por maço
+            Quantos cigarros vinham em cada maço?
           </label>
           <input
             type="number"
@@ -64,13 +71,14 @@ export function Onboarding({ onSubmit }: Props) {
             value={cigarettesPerPack}
             onChange={(e) => setCigarettesPerPack(Number(e.target.value))}
             required
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            placeholder="Ex: 20"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Preço do maço (R$)
+            Quanto custava o maço (R$)?
           </label>
           <input
             type="number"
@@ -79,26 +87,33 @@ export function Onboarding({ onSubmit }: Props) {
             value={pricePerPack}
             onChange={(e) => setPricePerPack(Number(e.target.value))}
             required
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            placeholder="Ex: 12,00"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
           />
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Usamos isso só para mostrar quanto você está economizando.
+          </p>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-            Seu motivo para parar (opcional)
+            O que te motiva a parar? (opcional)
           </label>
           <textarea
             value={motivo}
             onChange={(e) => setMotivo(e.target.value)}
             placeholder="Ex: quero mais saúde para minha família"
-            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-400 dark:focus-visible:ring-offset-slate-900"
             rows={3}
           />
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Vamos te mostrar isso nos momentos difíceis, para lembrar por que você começou.
+          </p>
         </div>
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-emerald-600 py-3 font-semibold text-white transition hover:bg-emerald-700"
+          className="w-full rounded-lg bg-emerald-600 py-3 font-semibold text-white transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 dark:focus-visible:ring-emerald-500 dark:focus-visible:ring-offset-slate-900"
         >
           Começar minha jornada
         </button>

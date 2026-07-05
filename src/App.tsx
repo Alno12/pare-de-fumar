@@ -13,7 +13,11 @@ function App() {
     <Dashboard
       profile={profile}
       onReset={() => {
-        if (confirm('Tem certeza que quer editar seus dados?')) {
+        if (
+          confirm(
+            'Quer ajustar seus dados? Seu progresso continua contando a partir da data que você definir.',
+          )
+        ) {
           setProfile(null)
         }
       }}
