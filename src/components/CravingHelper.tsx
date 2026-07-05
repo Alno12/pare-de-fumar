@@ -117,7 +117,7 @@ export function CravingHelper() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="craving-helper-title"
-            className="w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-xl dark:bg-slate-800"
+            className="animate-modal-in w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-xl dark:bg-slate-800"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 id="craving-helper-title" className="text-xl font-bold text-slate-900 dark:text-slate-50">
@@ -129,7 +129,7 @@ export function CravingHelper() {
               <div
                 role="status"
                 aria-live="polite"
-                className={`mx-auto mt-6 flex h-32 w-32 items-center justify-center rounded-full text-white font-semibold transition-all duration-[4000ms] ${
+                className={`mx-auto mt-6 flex h-32 w-32 items-center justify-center rounded-full text-white font-semibold transition-all duration-[4000ms] motion-reduce:scale-100 motion-reduce:transition-none motion-reduce:duration-0 ${
                   breathPhase === 'inspire'
                     ? 'scale-125 bg-emerald-500'
                     : breathPhase === 'segure'
@@ -143,7 +143,7 @@ export function CravingHelper() {
               <button
                 type="button"
                 onClick={startBreathing}
-                className="mt-6 w-full rounded-lg bg-emerald-600 py-2 font-medium text-white hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
+                className="mt-6 w-full rounded-lg bg-emerald-600 py-2 font-medium text-white transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
               >
                 Fazer exercício de respiração
               </button>
@@ -153,7 +153,7 @@ export function CravingHelper() {
               ref={closeButtonRef}
               type="button"
               onClick={closeHelper}
-              className="mt-4 w-full rounded-lg border border-slate-300 py-2 font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
+              className="mt-4 w-full rounded-lg border border-slate-300 py-2 font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
             >
               Já passou, fechar
             </button>

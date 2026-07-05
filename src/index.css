@@ -28,6 +28,59 @@ body {
 }
 
 /*
+ * Motion: entrada de modais (fade + leve subida).
+ * Curta e discreta (~200ms, alinhada a --duration-quick).
+ * Anima apenas opacity/transform. Some por completo com prefers-reduced-motion.
+ */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-modal-in {
+  animation: modal-in var(--duration-quick) ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-modal-in {
+    animation: none;
+  }
+}
+
+/*
+ * Motion: pulso único ao alcançar um marco de saúde.
+ * animation-iteration-count é implicitamente 1 (não há repeat/infinite).
+ * Some por completo com prefers-reduced-motion.
+ */
+@keyframes milestone-pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-milestone-pulse {
+  animation: milestone-pulse 500ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-milestone-pulse {
+    animation: none;
+  }
+}
+
+/*
  * Semântica de design tokens do app "Parar de Fumar"
  * ----------------------------------------------------
  * Cores (papel semântico -> escala Tailwind):

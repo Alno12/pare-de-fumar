@@ -21,7 +21,7 @@ export function Milestones({ quitDateISO }: Props) {
               <span
                 className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                   reached
-                    ? 'bg-emerald-600 text-white'
+                    ? 'animate-milestone-pulse bg-emerald-600 text-white'
                     : 'bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400'
                 }`}
               >
